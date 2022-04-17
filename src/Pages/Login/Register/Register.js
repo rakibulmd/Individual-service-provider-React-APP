@@ -1,7 +1,8 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
     const nameRef = useRef();
@@ -15,11 +16,13 @@ const Register = () => {
     const [createUserWithEmailAndPassword, user, loading, error] =
         useCreateUserWithEmailAndPassword(auth);
 
-    if (user) {
+    useEffect(() => {
         if (user) {
-            navigate(from, { replace: true });
+            if (user) {
+                navigate(from, { replace: true });
+            }
         }
-    }
+    }, [from, user, navigate]);
 
     const handleRegister = (event) => {
         event.preventDefault();
@@ -95,6 +98,7 @@ const Register = () => {
                     </Link>
                 </p>
             </div>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };

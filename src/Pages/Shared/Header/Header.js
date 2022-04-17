@@ -37,9 +37,9 @@ const Header = () => {
     //     { id: 4, name: "Log In", link: "/login" },
     // ];
     return (
-        <header className=" flex justify-center sticky top-0 bg-white/75 z-50 shadow-sm ">
+        <header className=" flex justify-center sticky top-0 bg-blue-50/95 z-50 shadow-md ">
             <div className="container flex justify-between items-center">
-                <div className="flex md:block bg-white/75">
+                <div className="flex md:block">
                     <div
                         onClick={() => {
                             setOpen(!open);
@@ -64,7 +64,7 @@ const Header = () => {
                         className={`md:flex items-center absolute md:static duration-300 w-full ease-in ${
                             open
                                 ? "top-10 left-[50px]"
-                                : "top-[-250px] bg-white/75 left-[50px]"
+                                : "top-[-250px] bg-white/0 left-[50px]"
                         }`}
                     >
                         {/* {routes.map((route) => (
@@ -78,21 +78,21 @@ const Header = () => {
                         ))} */}
 
                         <CustomLink
-                            className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100"
+                            className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100 lg:bg-white/0"
                             to="/home"
                         >
                             {" "}
                             Home{" "}
                         </CustomLink>
                         <CustomLink
-                            className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100"
+                            className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100 lg:bg-white/0"
                             to="/blogs"
                         >
                             {" "}
                             Blogs{" "}
                         </CustomLink>
                         <CustomLink
-                            className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100"
+                            className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100 lg:bg-white/0"
                             to="/about"
                         >
                             {" "}
@@ -101,13 +101,13 @@ const Header = () => {
                         {user ? (
                             <button
                                 onClick={handleSignOut}
-                                className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700 text-red-500 z-50 bg-white/100"
+                                className="block p-3 w-full md:p-4 md:ml-3 text-left  text-l font-semibold uppercase hover:text-blue-700 text-orange-500 z-50 bg-white/100 lg:bg-white/0"
                             >
                                 Sign Out
                             </button>
                         ) : (
                             <CustomLink
-                                className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100"
+                                className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100 lg:bg-white/0"
                                 to="/login"
                             >
                                 {" "}
