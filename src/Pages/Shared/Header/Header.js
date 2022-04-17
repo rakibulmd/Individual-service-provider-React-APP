@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { MenuIcon, XIcon } from "@heroicons/react/solid";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import logo from "../../../images/logo/logo.png";
+import auth from "../../../firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
 
 const Header = () => {
     function CustomLink({ children, to, ...props }) {
@@ -23,12 +26,16 @@ const Header = () => {
         );
     }
     const [open, setOpen] = useState(false);
-    const routes = [
-        { id: 1, name: "Home", link: "/home" },
-        { id: 2, name: "Blogs", link: "/blogs" },
-        { id: 3, name: "About", link: "/about" },
-        { id: 4, name: "Log In", link: "/login" },
-    ];
+    const [user, loading, error] = useAuthState(auth);
+    const handleSignOut = () => {
+        signOut(auth);
+    };
+    // const routes = [
+    //     { id: 1, name: "Home", link: "/home" },
+    //     { id: 2, name: "Blogs", link: "/blogs" },
+    //     { id: 3, name: "About", link: "/about" },
+    //     { id: 4, name: "Log In", link: "/login" },
+    // ];
     return (
         <header className=" flex justify-center sticky top-0 bg-white/75 z-50 shadow-sm ">
             <div className="container flex justify-between items-center">
@@ -60,7 +67,7 @@ const Header = () => {
                                 : "top-[-250px] bg-white/75 left-[50px]"
                         }`}
                     >
-                        {routes.map((route) => (
+                        {/* {routes.map((route) => (
                             <CustomLink
                                 className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100"
                                 key={route.id}
@@ -68,7 +75,45 @@ const Header = () => {
                             >
                                 {route.name}
                             </CustomLink>
-                        ))}
+                        ))} */}
+
+                        <CustomLink
+                            className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100"
+                            to="/home"
+                        >
+                            {" "}
+                            Home{" "}
+                        </CustomLink>
+                        <CustomLink
+                            className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100"
+                            to="/blogs"
+                        >
+                            {" "}
+                            Blogs{" "}
+                        </CustomLink>
+                        <CustomLink
+                            className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100"
+                            to="/about"
+                        >
+                            {" "}
+                            About{" "}
+                        </CustomLink>
+                        {user ? (
+                            <button
+                                onClick={handleSignOut}
+                                className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700 text-red-500 z-50 bg-white/100"
+                            >
+                                Sign Out
+                            </button>
+                        ) : (
+                            <CustomLink
+                                className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100"
+                                to="/login"
+                            >
+                                {" "}
+                                Login{" "}
+                            </CustomLink>
+                        )}
                     </nav>
                 </div>
             </div>
