@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "picture": "https://i.ibb.co/pnLmzPS/vTax1.jpg",
+        "name": "Legal solution on filed cases",
+        "description": "Do not get worried if you or your company has been issued any legal files cases. It's simple and not complex to solve. I've solved so many legal cases with 100% success rate. I've got everything ready to solve your case, just send me the papers!",
+        "bill": 1000
+    },
+    {
+        "id": "2",
+        "picture": "https://i.ibb.co/1ZNnL0h/vTax2.jpg",
+        "name": "Individuals TAX clearance",
+        "description": "Are you a registered tax payer or trying to be registered, I've got all the process from registration to clearance. From current to previous dues, your statement will be up to date and full process is hassle free. Will not take long time making your work flow disturbed!",
+        "bill": 800
+    },
+    {
+        "id": "3",
+        "picture": "https://i.ibb.co/0jkb9PL/vTax3.jpg",
+        "name": "TAX Calculation & Reduction",
+        "description": "Are you paying more than what you have to? From asset, investment, income to your expenses, I'll cover everything for you & let you get the best possible calculation that reduces unwanted tax amount & to avoid legal cases.",
+        "bill": 500
+    },
+    {
+        "id": "4",
+        "picture": "https://i.ibb.co/CH0msyg/vTax4.jpg",
+        "name": "Registering & clearing VAT",
+        "description": "If your company is going into business or having issue clearing the VAT issued by the Revenue Board, I can solve it all without losing a penny! I'll cover from legals to company's documents & make proper guideline for your future transaction on business.",
+        "bill": 2000
+    }
+]
