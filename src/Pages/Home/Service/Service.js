@@ -6,7 +6,7 @@ const Service = ({ service }) => {
     const navigate = useNavigate();
     const { id, name, picture, description, bill } = service;
     const navigateToServiceDetail = (id) => {
-        navigate(`/service/${id}`);
+        navigate(`/checkout:${id}`);
     };
     return (
         <div className="mb-10 border-2 border-blue-700 rounded-xl p-3 shadow-xl animate__animated animate__fadeInUp animate__fast	800ms">
@@ -24,7 +24,7 @@ const Service = ({ service }) => {
                 }}
                 className="bg-blue-700 text-white p-2 px-3 mt-3 rounded hover:bg-blue-800"
             >
-                Know More
+                Proceed to checkout
             </button>
         </div>
     );
