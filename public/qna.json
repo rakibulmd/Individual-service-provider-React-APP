@@ -1,17 +1,17 @@
 [
     {
         "id": 1,
-        "question": "What is context API?",
-        "answer": "Context API is used to send data to children component without props drilling at every level. If we need to share same data to the child component, usually we need to send and receive the data as props at every level. Which is time consuming and not easy to maintain in larger applications. Here comes the context api,  once the data is set, we can send it to any child component wrapped under provider. Even we don't need to  use props to receive that data. We can simply call the context hook with proper context name. It's that much simple and super useful."
+        "question": "What is the difference between Authentication & Authorization?",
+        "answer": "Authentication is the process of verification or identification. It identifies or verifies person or users depending on user credentials. It allows a person or a user to enter into the application or any other protected environment. After authentication, authorization determines the level of functionalities or access the person or user can do. This level is not set by the user or person, rather it is set by the authority of the application or environment. So, authorization comes after authentication."
     },
     {
         "id": 2,
-        "question": "What is HTML 5 semantic tags?",
-        "answer": "In HTML 5, semantic tags were introduces to further identify and arrange the HTML codes. This semantic tags is useful to understand the codes both for developer & browser & also good for SEO or search engine optimization. Semantic tags names are meaningful, like Article tag is used to write any kind of article inside it. Like that, nav tag is used for navigation related codes, header tag is used for heading related codes, main tag if for main contents, footer tag for website or other footers, etc."
+        "question": "Why firebase? What's the other alternatives?",
+        "answer": "Firebase is a google product, we can trust the quality, security & maintenance of firebase. It provides authentication which offers almost complete identity solution which support email password auth, phone no auth, Google, Facebook, GitHub, Twitter and more on which also included some good free services. There are also many good alternative to google firebase. Some open source firebase alternatives are Parse, AWS Amplify, Flutter, RxDB, Back4App, BackEndLess, Kuzzle etc which provides free and paid services similar to Google Firebase."
     },
     {
         "id": 3,
-        "question": "What is difference among block, inline block & inline elements?",
-        "answer": "There are three type of element in HTML codes, block, inline-block & inline. Block element takes the entire block of space in website or full width. Means they doesn't sit next to each other, rather they are pushed to different line or row. We can use margin, padding, height, width etc in block elements. Inline elements sit next to each other, they only takes the space they need and we can't use height, width or full potential of margin & padding properties in inline elements. Inline block is as same as inline but the difference is inline block elements can utilize height, width & full  potential of margin & padding while they still sit next to each other."
+        "question": "What other services does firebase provide other than authentication?",
+        "answer": "Authentication is a part of services provided by Firebase. There are lot of interesting feature that firebase provide. Like, with firebase, we can test new feature of our app withing group of user first, track the result in analytics. So it helps to reduce the risk of launching new features. With help of real time database, it let's user to chat with each other without leaving the app which is called cloud messaging. Some features provided by Firebase are reporting, analytics, activity dashboard, hosting, real time database, cloud database (Firestore), storage, machine learning, cloud messaging etc. Firebase also made app development a lot easier."
     }
 ]
