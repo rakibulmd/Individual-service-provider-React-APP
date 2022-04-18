@@ -15,19 +15,12 @@ import Header from "./Pages/Shared/Header/Header";
 
 function App() {
     return (
-        <div>
+        <div className="grid min-h-screen page-container">
             <Header></Header>
             <Routes>
                 <Route path="/" element={<MainHome></MainHome>}></Route>
                 <Route path="/home" element={<MainHome></MainHome>}></Route>
-                <Route
-                    path="/blogs"
-                    element={
-                        <RequireAuth>
-                            <Blogs></Blogs>
-                        </RequireAuth>
-                    }
-                ></Route>
+                <Route path="/blogs" element={<Blogs></Blogs>}></Route>
                 <Route
                     path="/success"
                     element={

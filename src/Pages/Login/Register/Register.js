@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
     useCreateUserWithEmailAndPassword,
@@ -8,6 +8,7 @@ import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
+    const [error, setError] = useState("");
     const nameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
@@ -39,7 +40,23 @@ const Register = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         const confirmPassword = confirmPasswordRef.current.value;
-        console.log(email, password);
+
+        if (!/^[a-zA-Z. ]{2,30}$/.test(name)) {
+            setError("Enter a valid name without numbers or characters");
+            return;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            setError("Enter a valid email");
+            return;
+        }
+        if (!/^(?=.*\d)[0-9a-zA-Z]{8,}$/.test(password)) {
+            setError("Enter a valid password");
+            return;
+        }
+        if (password !== confirmPassword) {
+            setError("Password doesn't matched!");
+            return;
+        }
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
     };
@@ -93,7 +110,7 @@ const Register = () => {
                         placeholder="Re-enter password"
                     />
                 </div>
-
+                <p className="text-red-700">{error}</p>
                 <input
                     className="bg-blue-700 text-white p-2 px-3 mt-3 rounded hover:bg-blue-800 inline-block"
                     type="submit"

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
     useSendPasswordResetEmail,
@@ -12,8 +12,9 @@ const Login = () => {
     const passwordRef = useRef();
     const navigate = useNavigate();
     const location = useLocation();
+    const [error, setError] = useState("");
     let from = location.state?.from?.pathname || "/";
-    const [signInWithEmailAndPassword, user, loading, error] =
+    const [signInWithEmailAndPassword, user, loading, signInError] =
         useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail, sending, passwordResetError] =
         useSendPasswordResetEmail(auth);
@@ -28,7 +29,12 @@ const Login = () => {
     const handleLogIn = (event) => {
         event.preventDefault();
         const email = emailRef.current.value;
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            setError("Enter a valid email");
+            return;
+        }
         const password = passwordRef.current.value;
+
         signInWithEmailAndPassword(email, password);
     };
     const handleResetPassword = async () => {
@@ -47,6 +53,7 @@ const Login = () => {
                         ref={emailRef}
                         className="border rounded-sm border-blue-700 w-full"
                         type="email"
+                        placeholder="Enter email"
                     />
                 </div>
                 <div className="input-group mb-3">
@@ -61,9 +68,15 @@ const Login = () => {
                         placeholder="Enter phone no"
                     />
                 </div>
-
+                <p className="text-red-700">
+                    {error ||
+                        signInError?.message.split("auth/")[1].split(")"[0]) ||
+                        passwordResetError?.message
+                            .split("auth/")[1]
+                            .split(")"[0])}
+                </p>
                 <input
-                    className="bg-blue-700 text-white p-2 px-3 mt-3 rounded hover:bg-blue-800 inline-block"
+                    className="bg-blue-700 text-white p-2 px-5 mt-3 rounded hover:bg-blue-800 inline-block"
                     type="submit"
                     value="Log In"
                 />
