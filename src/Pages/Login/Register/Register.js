@@ -62,50 +62,62 @@ const Register = () => {
     };
 
     return (
-        <div className="container mx-auto p-4">
+        <div className="container mx-auto p-4 w-full max-w-xs">
             <form onSubmit={handleRegister}>
                 <div className="input-group mb-3">
-                    <label className="block" htmlFor="name">
+                    <label
+                        className="block mb-1 text-md font-medium text-gray-900"
+                        htmlFor="name"
+                    >
                         Name
                     </label>
                     <input
                         ref={nameRef}
-                        className="border rounded-sm border-blue-700 w-full"
+                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5"
                         type="text"
                         placeholder="Enter your name"
                     />
                 </div>
                 <div className="input-group mb-3">
-                    <label className="block" htmlFor="email">
+                    <label
+                        className="block mb-1 text-md font-medium text-gray-900"
+                        htmlFor="email"
+                    >
                         Email
                     </label>
                     <input
                         ref={emailRef}
-                        className="border rounded-sm border-blue-700 w-full"
+                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5"
                         type="email"
                         placeholder="Enter your email"
                     />
                 </div>
                 <div className="input-group mb-3">
-                    <label className="block" htmlFor="password">
+                    <label
+                        className="block mb-1 text-md font-medium text-gray-900"
+                        htmlFor="password"
+                    >
                         Password
                     </label>
                     <input
                         ref={passwordRef}
                         required
-                        className="border rounded-sm border-blue-700 w-full"
+                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5"
                         type="password"
                         placeholder="Enter password"
                     />
                 </div>
                 <div className="input-group mb-3">
-                    <label className="block" htmlFor="confirmpassword">
+                    <label
+                        className="block mb-1 text-md font-medium text-gray-900"
+                        htmlFor="confirmpassword"
+                    >
                         Confirm Password
                     </label>
                     <input
                         ref={confirmPasswordRef}
                         required
-                        className="border rounded-sm border-blue-700 w-full"
+                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5"
                         type="password"
                         placeholder="Re-enter password"
                     />

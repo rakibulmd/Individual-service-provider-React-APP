@@ -1,13 +1,18 @@
 import React, { useRef } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate, useParams } from "react-router-dom";
+import auth from "../../firebase.init";
 import useServices from "../../Hooks/useServices";
 
 const Checkout = () => {
+    const [user] = useAuthState(auth);
+    if (user) {
+        console.log(user);
+    }
     const { serviceId } = useParams();
-    const serviceIdSliced = serviceId.split(":")[1];
-    const [services, setServices] = useServices();
+    const [services] = useServices();
     const clickedService = services.find(
-        (service) => service.id === serviceIdSliced
+        (service) => service.id === serviceId.split(":")[1]
     );
     const navigate = useNavigate();
     const nameRef = useRef("");
@@ -61,47 +66,65 @@ const Checkout = () => {
                             </h2>
                             <form onSubmit={handleConfirmCheckout}>
                                 <div className="input-group mb-3">
-                                    <label className="block" htmlFor="name">
+                                    <label
+                                        className="block mb-1 text-md font-medium text-gray-900"
+                                        htmlFor="name"
+                                    >
                                         Name:
                                     </label>
                                     <input
                                         ref={nameRef}
                                         required
-                                        className="border rounded-sm border-blue-700 w-full"
+                                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5"
                                         type="text"
                                         placeholder="Enter your name"
+                                        value={user.displayName}
+                                        readOnly
                                     />
                                 </div>
                                 <div className="input-group mb-3">
-                                    <label className="block" htmlFor="email">
+                                    <label
+                                        className="block mb-1 text-md font-medium text-gray-900"
+                                        htmlFor="email"
+                                    >
                                         Email
                                     </label>
                                     <input
                                         ref={emailRef}
-                                        className="border rounded-sm border-blue-700 w-full"
-                                        type="text"
+                                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5"
+                                        type="email"
+                                        value={user.email}
+                                        readOnly
+                                        placeholder="enter your email"
+                                        required
                                     />
                                 </div>
                                 <div className="input-group mb-3">
-                                    <label className="block" htmlFor="phone">
+                                    <label
+                                        className="block mb-1 text-md font-medium text-gray-900"
+                                        htmlFor="phone"
+                                    >
                                         Phone No
                                     </label>
                                     <input
                                         ref={phoneRef}
                                         required
-                                        className="border rounded-sm border-blue-700 w-full"
-                                        type="phone"
+                                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5"
+                                        type="tel"
                                         placeholder="Enter phone no"
                                     />
                                 </div>
                                 <div className="input-group mb-3">
-                                    <label className="block" htmlFor="address">
+                                    <label
+                                        className="block mb-1 text-md font-medium text-gray-900"
+                                        htmlFor="address"
+                                    >
                                         Address
                                     </label>
                                     <input
                                         ref={addressRef}
                                         required
-                                        className="border rounded-sm border-blue-700 w-full"
+                                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5"
                                         type="text"
                                         placeholder="Enter your address"
                                     />

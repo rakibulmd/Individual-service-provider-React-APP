@@ -39,31 +39,43 @@ const Login = () => {
     };
     const handleResetPassword = async () => {
         const email = emailRef.current.value;
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            setError("Enter a valid email");
+            return;
+        }
+
         await sendPasswordResetEmail(email);
+        alert("rest mail sent");
     };
 
     return (
-        <div className="container mx-auto p-4">
+        <div className="container mx-auto p-4 w-full max-w-xs">
             <form onSubmit={handleLogIn}>
                 <div className="input-group mb-3">
-                    <label className="block" htmlFor="email">
+                    <label
+                        className="block mb-1 text-md font-medium text-gray-900"
+                        htmlFor="email"
+                    >
                         Email
                     </label>
                     <input
                         ref={emailRef}
-                        className="border rounded-sm border-blue-700 w-full"
+                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5"
                         type="email"
                         placeholder="Enter email"
                     />
                 </div>
                 <div className="input-group mb-3">
-                    <label className="block" htmlFor="phone">
+                    <label
+                        className="block mb-1 text-md font-medium text-gray-900"
+                        htmlFor="phone"
+                    >
                         Password
                     </label>
                     <input
                         ref={passwordRef}
                         required
-                        className="border rounded-sm border-blue-700 w-full"
+                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5"
                         type="password"
                         placeholder="Enter phone no"
                     />
