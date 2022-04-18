@@ -1,10 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate, useParams } from "react-router-dom";
 import auth from "../../firebase.init";
 import useServices from "../../Hooks/useServices";
 
 const Checkout = () => {
+    const [error, setError] = useState("");
     const [user] = useAuthState(auth);
     if (user) {
         console.log(user);
@@ -27,6 +28,16 @@ const Checkout = () => {
         const phone = phoneRef.current.value;
         const address = addressRef.current.value;
         console.log(name, email, phone, address);
+        if (!/^\+?\d{7}/.test(phone)) {
+            setError("Enter valid phone number (no space)");
+            return;
+        }
+
+        if (!/^[a-zA-Z0-9\s,.'-]{5,}$/.test(address)) {
+            setError("Enter valid address");
+            return;
+        }
+        setError("");
         navigate("/success");
     };
 
@@ -129,6 +140,7 @@ const Checkout = () => {
                                         placeholder="Enter your address"
                                     />
                                 </div>
+                                <p className="text-red-600">{error}</p>
                                 <input
                                     className="bg-blue-700 text-white p-2 px-3 mt-3 rounded hover:bg-blue-800 inline-block"
                                     type="submit"

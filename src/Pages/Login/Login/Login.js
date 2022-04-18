@@ -39,19 +39,16 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
     };
 
-    const handleResetPassword = async () => {
+    const handleResetPassword = async (event) => {
+        event.preventDefault();
         const email = emailRef.current.value;
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             setError("Enter a valid email");
             return;
         }
-        if (sending) {
-            return <Loading></Loading>;
-        }
 
         await sendPasswordResetEmail(email);
-
-        alert("rest mail sent");
+        setError("");
     };
 
     return (
@@ -87,7 +84,6 @@ const Login = () => {
                         placeholder="Enter phone no"
                     />
                 </div>
-
                 <p className="text-red-700">
                     {error ||
                         signInError?.message.split("auth/")[1].split(")"[0]) ||
@@ -104,15 +100,20 @@ const Login = () => {
                         value="Log In"
                     />
                 )}
+
                 <div className="my-5">
                     Forgot password?{" "}
-                    <Link
-                        onClick={handleResetPassword}
-                        className="text-blue-700 underline"
-                        to="/home"
-                    >
-                        Reset Now
-                    </Link>
+                    {sending ? (
+                        <Loading size={"w-10"}></Loading>
+                    ) : (
+                        <Link
+                            onClick={handleResetPassword}
+                            className="text-blue-700 underline"
+                            to="/home"
+                        >
+                            Reset Now
+                        </Link>
+                    )}
                 </div>
             </form>
             <div>
