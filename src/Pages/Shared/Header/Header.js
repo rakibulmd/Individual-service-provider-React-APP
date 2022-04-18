@@ -59,8 +59,8 @@ const Header = () => {
                         <div>
                             <h2 className="text-center text-3xl text-blue-700 mx-auto z-50">
                                 Your vTax{" "}
-                                <span className="text-sm text-black">
-                                    {user ? "user:" : ""} {user?.displayName}
+                                <span className="text-sm text-black hidden sm:inline">
+                                    {user ? "User:" : ""} {user?.displayName}
                                 </span>
                             </h2>
                         </div>
@@ -85,21 +85,21 @@ const Header = () => {
                         ))} */}
 
                         <CustomLink
-                            className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100 lg:bg-white/0"
+                            className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100 md:bg-white/0"
                             to="/home"
                         >
                             {" "}
                             Home{" "}
                         </CustomLink>
                         <CustomLink
-                            className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100 lg:bg-white/0"
+                            className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100 md:bg-white/0"
                             to="/blogs"
                         >
                             {" "}
                             Blogs{" "}
                         </CustomLink>
                         <CustomLink
-                            className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100 lg:bg-white/0"
+                            className="block p-3 md:p-4 md:ml-3  text-l font-semibold uppercase hover:text-blue-700  z-50 bg-white/100 md:bg-white/0"
                             to="/about"
                         >
                             {" "}
@@ -108,7 +108,7 @@ const Header = () => {
                         {user ? (
                             <button
                                 onClick={handleSignOut}
-                                className="block p-3 w-full md:p-4 md:ml-3 text-left  text-l font-semibold uppercase hover:text-blue-700 text-orange-500 z-50 bg-white/100 lg:bg-white/0"
+                                className="block p-3 w-full md:p-4 md:ml-3 text-left  text-l font-semibold uppercase hover:text-blue-700 text-orange-500 z-50 bg-white/100 md:bg-white/0"
                             >
                                 Sign Out
                             </button>
