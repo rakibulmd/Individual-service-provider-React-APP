@@ -6,6 +6,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import Loading from "../../Shared/Loading/Loading";
 
 const Login = () => {
     const emailRef = useRef();
@@ -37,14 +38,19 @@ const Login = () => {
 
         signInWithEmailAndPassword(email, password);
     };
+
     const handleResetPassword = async () => {
         const email = emailRef.current.value;
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             setError("Enter a valid email");
             return;
         }
+        if (sending) {
+            return <Loading></Loading>;
+        }
 
         await sendPasswordResetEmail(email);
+
         alert("rest mail sent");
     };
 
@@ -59,6 +65,7 @@ const Login = () => {
                         Email
                     </label>
                     <input
+                        required
                         ref={emailRef}
                         className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5"
                         type="email"
@@ -80,6 +87,7 @@ const Login = () => {
                         placeholder="Enter phone no"
                     />
                 </div>
+
                 <p className="text-red-700">
                     {error ||
                         signInError?.message.split("auth/")[1].split(")"[0]) ||
@@ -87,12 +95,16 @@ const Login = () => {
                             .split("auth/")[1]
                             .split(")"[0])}
                 </p>
-                <input
-                    className="bg-blue-700 text-white p-2 px-5 mt-3 rounded hover:bg-blue-800 inline-block"
-                    type="submit"
-                    value="Log In"
-                />
-                <span className="ml-3">
+                {loading ? (
+                    <Loading size={"w-16"}></Loading>
+                ) : (
+                    <input
+                        className="bg-blue-700 text-white p-2 px-5 mt-3 rounded hover:bg-blue-800 inline-block"
+                        type="submit"
+                        value="Log In"
+                    />
+                )}
+                <div className="my-5">
                     Forgot password?{" "}
                     <Link
                         onClick={handleResetPassword}
@@ -101,7 +113,7 @@ const Login = () => {
                     >
                         Reset Now
                     </Link>
-                </span>
+                </div>
             </form>
             <div>
                 <p>

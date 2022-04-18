@@ -1,11 +1,9 @@
 import React from "react";
 import loading from "../../../images/loading/loading.gif";
-const Loading = () => {
+const Loading = ({ size }) => {
     return (
-        <div className="container mx-auto w-screen h-screen flex justify-center items-center">
-            <div>
-                <img src={loading} alt="" />
-            </div>
+        <div className="container mx-auto">
+            <img className={`block mx-auto ${size}`} src={loading} alt="" />
         </div>
     );
 };

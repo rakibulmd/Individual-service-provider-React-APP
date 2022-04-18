@@ -4,7 +4,7 @@ import Loading from "../Shared/Loading/Loading";
 const About = () => {
     return (
         <div>
-            <Loading></Loading>
+            <Loading size={"w-64"}></Loading>
         </div>
     );
 };

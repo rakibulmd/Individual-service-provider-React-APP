@@ -1,10 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading/Loading";
 
 const SocialLogin = () => {
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [error, setError] = useState("");
+    const [signInWithGoogle, user, loading, googleSignInError] =
+        useSignInWithGoogle(auth);
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
     const navigate = useNavigate();
@@ -16,6 +19,11 @@ const SocialLogin = () => {
             }
         }
     }, [from, user, navigate]);
+
+    if (loading) {
+        return <Loading></Loading>;
+    }
+
     const handleSignInWithGoogle = () => {
         signInWithGoogle();
     };
@@ -27,6 +35,9 @@ const SocialLogin = () => {
                 <div className="w-1/2 border-b border-gray-600"></div>
             </div>
             <div className="text-center">
+                <p className="text-red-700">
+                    {googleSignInError?.message.split("auth/")[1].split(")"[0])}
+                </p>
                 <button
                     onClick={handleSignInWithGoogle}
                     className="bg-blue-700 text-white p-2 px-3 mt-3 rounded hover:bg-blue-800 "

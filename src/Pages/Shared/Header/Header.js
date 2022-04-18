@@ -54,7 +54,10 @@ const Header = () => {
                         </div>
                         <div>
                             <h2 className="text-center text-3xl mx-auto z-50">
-                                Your vTax
+                                Your vTax{" "}
+                                <span className="text-sm">
+                                    {user ? "user:" : ""} {user?.displayName}
+                                </span>
                             </h2>
                         </div>
                     </div>
