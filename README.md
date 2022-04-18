@@ -1,6 +1,6 @@
 # [Website is Live](https://your-vtax.web.app/)
 
-Live website Link [Smart Watch Guides](https://your-vtax.web.app/).
+Live website Link [Your vTax](https://your-vtax.web.app/).
 
 ### Live link (https://your-vtax.web.app/)
 
@@ -8,9 +8,9 @@ Live website Link [Smart Watch Guides](https://your-vtax.web.app/).
 
 > This web app is designed and developed for Individual service provider. All the services are featured here. Also, there are order confirmation page using email or google log in. Blogs and about sections are added some more information on the site.
 
-![Web capture_5-4-2022_215631_localhost](https://user-images.githubusercontent.com/96826691/161800417-98d2c69a-7d7b-4644-829b-0a603435c180.jpeg)
+![Group 1dfs](https://user-images.githubusercontent.com/96826691/163836242-5ac70578-4ccb-44a5-9bb3-5f1a715b1530.jpg)
 
-![Web capture_5-4-2022_215638_localhost](https://user-images.githubusercontent.com/96826691/161801309-270d24fc-09bd-4d34-9222-dd5c7d742851.jpeg)
+![Group 1](https://user-images.githubusercontent.com/96826691/163836617-12e9e60f-049f-4f79-b16e-254567f92db0.png)
 
 ## // Main Features:
 
