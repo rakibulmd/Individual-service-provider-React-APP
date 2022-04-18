@@ -7,6 +7,7 @@ import {
 import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import Loading from "../../Shared/Loading/Loading";
+import "animate.css";
 
 const Register = () => {
     const [error, setError] = useState("");
@@ -75,8 +76,9 @@ const Register = () => {
                         Name
                     </label>
                     <input
+                        required
                         ref={nameRef}
-                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5"
+                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 animate__animated animate__fadeInLeft animate__fast	800ms"
                         type="text"
                         placeholder="Enter your name"
                     />
@@ -89,8 +91,9 @@ const Register = () => {
                         Email
                     </label>
                     <input
+                        required
                         ref={emailRef}
-                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5"
+                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 animate__animated animate__fadeInRight animate__fast	800ms"
                         type="email"
                         placeholder="Enter your email"
                     />
@@ -105,7 +108,7 @@ const Register = () => {
                     <input
                         ref={passwordRef}
                         required
-                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5"
+                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 animate__animated animate__fadeInLeft animate__fast	800ms"
                         type="password"
                         placeholder="Enter password"
                     />
@@ -120,7 +123,7 @@ const Register = () => {
                     <input
                         ref={confirmPasswordRef}
                         required
-                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5"
+                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 animate__animated animate__fadeInRight animate__fast	800ms"
                         type="password"
                         placeholder="Re-enter password"
                     />

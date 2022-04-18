@@ -3,7 +3,8 @@ import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
-
+import google from "../../../images/logo/google.png";
+import "animate.css";
 const SocialLogin = () => {
     const [error, setError] = useState("");
     const [signInWithGoogle, user, loading, googleSignInError] =
@@ -34,15 +35,16 @@ const SocialLogin = () => {
                 <p className="mx-5 pb-1">or</p>
                 <div className="w-1/2 border-b border-gray-600"></div>
             </div>
-            <div className="text-center">
+            <div className="text-center ">
                 <p className="text-red-700">
                     {googleSignInError?.message.split("auth/")[1].split(")"[0])}
                 </p>
                 <button
                     onClick={handleSignInWithGoogle}
-                    className="bg-blue-700 text-white p-2 px-3 mt-3 rounded hover:bg-blue-800 "
+                    className="bg-violet-800 text-white p-2 px-3 mt-3 rounded hover:bg-blue-800 animate__animated animate__fadeInUp animate__fast	800ms"
                 >
-                    Sign in with Google
+                    <img className="w-10 inline" src={google} alt="" /> Sign in
+                    with Google
                 </button>
             </div>
         </div>
