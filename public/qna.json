@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "question": "What is context API?",
+        "answer": "Context API is used to send data to children component without props drilling at every level. If we need to share same data to the child component, usually we need to send and receive the data as props at every level. Which is time consuming and not easy to maintain in larger applications. Here comes the context api,  once the data is set, we can send it to any child component wrapped under provider. Even we don't need to  use props to receive that data. We can simply call the context hook with proper context name. It's that much simple and super useful."
+    },
+    {
+        "id": 2,
+        "question": "What is HTML 5 semantic tags?",
+        "answer": "In HTML 5, semantic tags were introduces to further identify and arrange the HTML codes. This semantic tags is useful to understand the codes both for developer & browser & also good for SEO or search engine optimization. Semantic tags names are meaningful, like Article tag is used to write any kind of article inside it. Like that, nav tag is used for navigation related codes, header tag is used for heading related codes, main tag if for main contents, footer tag for website or other footers, etc."
+    },
+    {
+        "id": 3,
+        "question": "What is difference among block, inline block & inline elements?",
+        "answer": "There are three type of element in HTML codes, block, inline-block & inline. Block element takes the entire block of space in website or full width. Means they doesn't sit next to each other, rather they are pushed to different line or row. We can use margin, padding, height, width etc in block elements. Inline elements sit next to each other, they only takes the space they need and we can't use height, width or full potential of margin & padding properties in inline elements. Inline block is as same as inline but the difference is inline block elements can utilize height, width & full  potential of margin & padding while they still sit next to each other."
+    }
+]

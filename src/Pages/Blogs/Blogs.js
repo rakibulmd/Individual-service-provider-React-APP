@@ -1,13 +1,19 @@
-import React from "react";
-import useServices from "../../Hooks/useServices";
+import React, { useEffect, useState } from "react";
+import QnA from "./QnA/QnA";
 
 const Blogs = () => {
-    const [services, setServices] = useServices();
+    const [qnas, setQnas] = useState([]);
+    useEffect(() => {
+        fetch("qna.json")
+            .then((res) => res.json())
+            .then((data) => setQnas(data));
+    }, []);
     return (
-        <div className="container mx-auto my-5">
-            <h2 className="text-4xl text-center  font-bold text-blue-700">
-                My Services {services.length}
-            </h2>
+        <div className="container mx-auto p-3 md:p-5">
+            <h2 className="font-bold text-3xl py-3 mb-5">QnA:</h2>
+            {qnas.map((qna) => (
+                <QnA qna={qna} key={qna.id}></QnA>
+            ))}
         </div>
     );
 };
