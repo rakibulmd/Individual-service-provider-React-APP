@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+    useCreateUserWithEmailAndPassword,
+    useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
@@ -13,8 +16,13 @@ const Register = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-    const [createUserWithEmailAndPassword, user, loading, error] =
-        useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, user, loading, createUserError] =
+        useCreateUserWithEmailAndPassword(auth, {
+            sendEmailVerification: true,
+        });
+
+    const [updateProfile, updating, profileUpdateError] =
+        useUpdateProfile(auth);
 
     useEffect(() => {
         if (user) {
@@ -22,16 +30,18 @@ const Register = () => {
                 navigate(from, { replace: true });
             }
         }
+        console.log(user);
     }, [from, user, navigate]);
 
-    const handleRegister = (event) => {
+    const handleRegister = async (event) => {
         event.preventDefault();
         const name = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         const confirmPassword = confirmPasswordRef.current.value;
         console.log(email, password);
-        createUserWithEmailAndPassword(email, password);
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name });
     };
 
     return (

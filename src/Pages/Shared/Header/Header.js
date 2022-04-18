@@ -37,7 +37,7 @@ const Header = () => {
     //     { id: 4, name: "Log In", link: "/login" },
     // ];
     return (
-        <header className=" flex justify-center sticky top-0 bg-blue-50/95 z-50 shadow-md ">
+        <header className=" flex justify-center sticky top-0 bg-blue-50/95 z-50 shadow-md px-4">
             <div className="container flex justify-between items-center">
                 <div className="flex md:block">
                     <div
