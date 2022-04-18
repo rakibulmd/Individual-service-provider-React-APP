@@ -30,6 +30,7 @@ const Header = () => {
     const navigate = useNavigate();
     const handleSignOut = () => {
         signOut(auth);
+        navigate("/home");
     };
     // const routes = [
     //     { id: 1, name: "Home", link: "/home" },
@@ -38,7 +39,7 @@ const Header = () => {
     //     { id: 4, name: "Log In", link: "/login" },
     // ];
     return (
-        <header className="flex justify-center sticky top-0 bg-blue-50/95 z-50 shadow-md px-4">
+        <header className="flex justify-center sticky top-0 bg-blue-50/95 z-50 shadow-md px-4 py-2">
             <div className="container flex justify-between items-center">
                 <div className="flex md:block">
                     <div
