@@ -19,13 +19,12 @@ const Register = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-    const [createUserWithEmailAndPassword, user, loading, createUserError] =
+    const [createUserWithEmailAndPassword, user, loading] =
         useCreateUserWithEmailAndPassword(auth, {
             sendEmailVerification: true,
         });
 
-    const [updateProfile, updating, profileUpdateError] =
-        useUpdateProfile(auth);
+    const [updateProfile] = useUpdateProfile(auth);
 
     useEffect(() => {
         if (user) {
@@ -78,7 +77,7 @@ const Register = () => {
                     <input
                         required
                         ref={nameRef}
-                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 animate__animated animate__fadeInLeft animate__fast	800ms"
+                        className="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 animate__animated animate__fadeInLeft animate__fast	800ms"
                         type="text"
                         placeholder="Enter your name"
                     />
@@ -93,7 +92,7 @@ const Register = () => {
                     <input
                         required
                         ref={emailRef}
-                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 animate__animated animate__fadeInRight animate__fast	800ms"
+                        className="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 animate__animated animate__fadeInRight animate__fast	800ms"
                         type="email"
                         placeholder="Enter your email"
                     />
@@ -108,7 +107,7 @@ const Register = () => {
                     <input
                         ref={passwordRef}
                         required
-                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 animate__animated animate__fadeInLeft animate__fast	800ms"
+                        className="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 animate__animated animate__fadeInLeft animate__fast	800ms"
                         type="password"
                         placeholder="Enter password"
                     />
@@ -123,7 +122,7 @@ const Register = () => {
                     <input
                         ref={confirmPasswordRef}
                         required
-                        className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 animate__animated animate__fadeInRight animate__fast	800ms"
+                        className="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 animate__animated animate__fadeInRight animate__fast	800ms"
                         type="password"
                         placeholder="Re-enter password"
                     />

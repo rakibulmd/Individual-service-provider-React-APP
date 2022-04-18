@@ -26,7 +26,7 @@ const Header = () => {
         );
     }
     const [open, setOpen] = useState(false);
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const navigate = useNavigate();
     const handleSignOut = () => {
         signOut(auth);
