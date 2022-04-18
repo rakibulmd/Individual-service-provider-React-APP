@@ -6,6 +6,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import Loading from "../../Shared/Loading/Loading";
 
 const Register = () => {
     const [error, setError] = useState("");
@@ -50,15 +51,17 @@ const Register = () => {
             return;
         }
         if (!/^(?=.*\d)[0-9a-zA-Z]{8,}$/.test(password)) {
-            setError("Enter a valid password");
+            setError("Enter a valid password (at least 8 character length");
             return;
         }
         if (password !== confirmPassword) {
             setError("Password doesn't matched!");
             return;
         }
+
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
+        await alert("verification email sent!");
     };
 
     return (
@@ -123,11 +126,15 @@ const Register = () => {
                     />
                 </div>
                 <p className="text-red-700">{error}</p>
-                <input
-                    className="bg-blue-700 text-white p-2 px-3 mt-3 rounded hover:bg-blue-800 inline-block"
-                    type="submit"
-                    value="Log In"
-                />
+                {loading ? (
+                    <Loading size={"w-10"}></Loading>
+                ) : (
+                    <input
+                        className="bg-blue-700 text-white p-2 px-3 mt-3 rounded hover:bg-blue-800 inline-block"
+                        type="submit"
+                        value="Register"
+                    />
+                )}
             </form>
             <div>
                 <p>

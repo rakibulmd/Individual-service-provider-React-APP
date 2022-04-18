@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MenuIcon, XIcon } from "@heroicons/react/solid";
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import { Link, useMatch, useNavigate, useResolvedPath } from "react-router-dom";
 import logo from "../../../images/logo/logo.png";
 import auth from "../../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -27,6 +27,7 @@ const Header = () => {
     }
     const [open, setOpen] = useState(false);
     const [user, loading, error] = useAuthState(auth);
+    const navigate = useNavigate();
     const handleSignOut = () => {
         signOut(auth);
     };
@@ -48,14 +49,17 @@ const Header = () => {
                     >
                         {open ? <XIcon></XIcon> : <MenuIcon></MenuIcon>}
                     </div>
-                    <div className="flex justify-center gap-1">
+                    <div
+                        onClick={() => navigate("/home")}
+                        className="flex justify-center gap-1"
+                    >
                         <div>
                             <img className="w-10 h-10" src={logo} alt="" />
                         </div>
                         <div>
-                            <h2 className="text-center text-3xl mx-auto z-50">
+                            <h2 className="text-center text-3xl text-blue-700 mx-auto z-50">
                                 Your vTax{" "}
-                                <span className="text-sm">
+                                <span className="text-sm text-black">
                                     {user ? "user:" : ""} {user?.displayName}
                                 </span>
                             </h2>
