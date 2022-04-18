@@ -37,7 +37,7 @@ const Header = () => {
     //     { id: 4, name: "Log In", link: "/login" },
     // ];
     return (
-        <header className=" flex justify-center sticky top-0 bg-blue-50/95 z-50 shadow-md px-4">
+        <header className="flex justify-center sticky top-0 bg-blue-50/95 z-50 shadow-md px-4">
             <div className="container flex justify-between items-center">
                 <div className="flex md:block">
                     <div
@@ -63,8 +63,8 @@ const Header = () => {
                     <nav
                         className={`md:flex items-center absolute md:static duration-300 w-full ease-in ${
                             open
-                                ? "top-10 left-[50px]"
-                                : "top-[-250px] bg-white/0 left-[50px]"
+                                ? "top-10 left-[0px]"
+                                : "top-[-250px] bg-white/0 left-[0px]"
                         }`}
                     >
                         {/* {routes.map((route) => (

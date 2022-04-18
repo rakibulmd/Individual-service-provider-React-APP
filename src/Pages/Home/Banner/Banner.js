@@ -7,7 +7,7 @@ import "animate.css";
 const Banner = () => {
     const navigate = useNavigate();
     return (
-        <div className="container showcase mx-auto flex flex-col items-center md:flex-row justify-center ">
+        <div className="showcase flex flex-col items-center md:flex-row justify-center ">
             <div className="order-2 md:order-1 text-center md:text-left animate__animated animate__fadeInLeft animate__fast	800ms pl-4">
                 <h2 className="text-4xl font-thin">Don't loose a Penny!</h2>
                 <h2 className="text-5xl text-blue-700 leading mb-10">

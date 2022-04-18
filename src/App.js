@@ -20,7 +20,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<MainHome></MainHome>}></Route>
                 <Route path="/home" element={<MainHome></MainHome>}></Route>
-                <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+                {/* <Route path="/blogs" element={<Blogs></Blogs>}></Route>
                 <Route
                     path="/success"
                     element={
@@ -39,7 +39,7 @@ function App() {
                         </RequireAuth>
                     }
                 ></Route>
-                <Route path="*" element={<NotFound></NotFound>}></Route>
+                <Route path="*" element={<NotFound></NotFound>}></Route> */}
             </Routes>
             <Footer></Footer>
         </div>

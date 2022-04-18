@@ -4,7 +4,7 @@ import Services from "../Services/Services";
 
 const MainHome = () => {
     return (
-        <div>
+        <div className="container mx-auto">
             <Banner></Banner>
             <Services></Services>
         </div>
