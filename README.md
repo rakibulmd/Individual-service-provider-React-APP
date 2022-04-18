@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# [Website is Live](https://your-vtax.web.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live website Link [Smart Watch Guides](https://your-vtax.web.app/).
 
-## Available Scripts
+### Live link (https://your-vtax.web.app/)
 
-In the project directory, you can run:
+## // Project Description
 
-### `npm start`
+> This web app is designed and developed for Individual service provider. All the services are featured here. Also, there are order confirmation page using email or google log in. Blogs and about sections are added some more information on the site.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Web capture_5-4-2022_215631_localhost](https://user-images.githubusercontent.com/96826691/161800417-98d2c69a-7d7b-4644-829b-0a603435c180.jpeg)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Web capture_5-4-2022_215638_localhost](https://user-images.githubusercontent.com/96826691/161801309-270d24fc-09bd-4d34-9222-dd5c7d742851.jpeg)
 
-### `npm test`
+## // Main Features:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   Fully Responsive on all devices
+-   Build with React.js
+-   React router for faster page switching
+-   Firebase for authorization
+-   Form validation using regex (client side)
+-   Easier navigation
+-   Eye smoothing animation
+-   404 addressing
 
-### `npm run build`
+## // Dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    - heroicons/react": "^1.0.6",
+    - testing-library/jest-dom": "^5.16.4",
+    - testing-library/react": "^13.1.1",
+    - testing-library/user-event": "^13.5.0",
+    - animate.css": "^4.1.1",
+    - firebase": "^9.6.11",
+    - web-vitals": "^2.1.4"
+    - react": "^18.0.0",
+    - react-dom": "^18.0.0",
+    - react-firebase-hooks": "^5.0.3",
+    - react-router-dom": "^6.3.0",
+    - react-scripts": "5.0.1",
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## // devDependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    - autoprefixer": "^10.4.4",
+    - postcss": "^8.4.12",
+    - tailwindcss": "^3.0.23"
 
-### `npm run eject`
+## // Authors
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Rakibul Islam @rakibulmd
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## // Version History
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   0.1
+    -   Initial Release
